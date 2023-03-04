@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>Comprar</title>
+</head>
+<body>
+    <h1 class="p-5">Elige tus productos</h1>
+    <div class="container">
+        <div class="row p-3">
+            <div class="col-4">
+                <img src="images/cacahuates.jpg" class="img-thumbnail alt="pollo frito">
+            </div>
+            <div class="col-4">
+                <img src="images/pollo-frito.jpg" class="img-thumbnail" alt="cacahuates">
+            </div>
+            <div class="col-4">
+                <img src="images/pastel.jpg" class="img-thumbnail" alt="pastel">
+            </div>
+        </div>
+        <form action="/carrito" method="POST">
+            <div class="row p-3 pb-5 h-100">
+                <div class="col-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="cacahuates" id="cacahuates">
+                        <label class="form-check-label" for="cacahuates">
+                          Cacahuates
+                        </label>
+                      </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="pollo-frito" id="pollo-frito">
+                        <label class="form-check-label" for="pollo-frito">
+                          Pollo Frito
+                        </label>
+                      </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Pastel
+                        </label>
+                      </div>
+                </div>
+                <button type="submit">AGREGAR AL CARRITO</button>
+            </div>
+        </form>
+
+        
+    </div>
+</body>
+</html>
