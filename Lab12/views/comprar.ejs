@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/output.css">
+    <title>Comprar</title>
+</head>
+</head>
+<%- include('partials/nav-bar.ejs') %>
+<body>
+    <h1 class="p-5 mt-5 text-center text-2xl font-bold">Por favor pide lo que quieras:</h1>
+    <form action="/buy/carrito" method="POST">
+        <div class="row text-center p-5">
+            <div class="col-4 p-3">
+                <input type="radio" name="cacahuates" id="cacahuates">
+                <label for="cacahuates">Cacahuates</label>
+            </div>
+            <div class="col-4 p-3">
+                <input type="radio" name="pf" id="pf">
+                <label for="pf">Pollo frito</label>
+            </div>
+            <div class="col-4 p-3">
+                <input type="radio" name="flores" id="flores">
+                <label for="flores">Flores</label>
+            </div>
+        </div>
+        <div class="row text-center p-5">
+            <div class="col">
+                <input type="submit" value="Ir a carrito" class="p-5 rounded-lg bg-slate-700 text-zinc-100 hover:bg-zinc-100 hover:text-slate-700">
+            </div>
+        </div>
+    </form>
+</body>
+</html>
