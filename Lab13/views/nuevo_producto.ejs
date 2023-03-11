@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/output.css">
+    <title>Agregar producto</title>
+</head>
+<%- include('partials/nav-bar.ejs') %>
+<body class="bg-slate-500 text-center">
+    <div class="p-5">
+        <h1 class="text-2xl text-slate-100">Agrega un nuevo producto</h1>
+    </div>
+    <form action="/new/nuevo-producto" method="POST">
+        <div class="p-5">
+            <label for="nombre" class="text-slate-100">Nombre:</label>
+            <input required name="nombre" id="nombre" type="text" placeholder="Ingresa el nombre del producto"
+            class="bg-slate-500">
+        </div>
+        <br>
+        <div class="p-5">        
+            <label for="imagen" class="text-slate-100">URL de la imagen:</label>
+            <input required name="imagen" id="imagen" type="text" placeholder="Ingresa el URL de la imagen"
+            class="bg-slate-500">
+        </div>
+        <br>
+        <div class="p-5">
+            <label for="handle" class="text-slate-100">Handle:</label>
+            <input required name="handle" id="handle" type="text" placeholder="@producto"
+            class="bg-slate-500">
+        </div>
+        <br>
+        <div class="p-5">
+            <label for="precio" class="text-slate-100">Precio: $</label>
+            <input required name="precio" id="precio" type="text" placeholder="Ingresa el precio"
+            class="bg-slate-500">
+        </div>
+        <br>
+        <div class="p-5">
+            <input type="submit" value="Agregar"
+            class="p-5 rounded-lg bg-slate-700 text-zinc-100 hover:bg-zinc-100 hover:text-slate-700">
+        </div>
+    </form>
+</body>
+
+</html>
