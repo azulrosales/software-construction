@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Data</title>
+</head>
+<body>
+    <h1>Student Data</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Major</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% students.forEach((student) => { %>
+          <tr>
+            <td><%= student.id %></td>
+            <td><%= student.name %></td>
+            <td><%= student.age %></td>
+            <td><%= student.major %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    <h2>¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?</h2>
+    <p>Escribir el código SQL exclusivamente en la capa del modelo tiene varias ventajas, 
+        incluyendo la separación de responsabilidades, la reutilización de código, la
+        capacidad de adaptarse a cambios en la base de datos y la facilidad para realizar 
+        pruebas unitarias. Esto puede mejorar la calidad, eficiencia y mantenibilidad del 
+        código, así como permitir una mayor flexibilidad y reutilización.
+    </p>
+    <h2>¿Qué es SQL injection y cómo se puede prevenir?</h2>
+    <p>
+        SQL injection es una técnica de hacking en la que se inserta código malicioso en 
+        las consultas SQL de una aplicación web, con el objetivo de comprometer la seguridad
+        de la base de datos subyacente. La inyección SQL puede permitir a un atacante acceder, 
+        modificar o borrar datos de la base de datos, o incluso tomar el control del servidor 
+        web. <br>
+        Para prevenirla, se deben tomar medidas de seguridad adecuadas, como la validación y 
+        sanitización de entrada, el uso de consultas parametrizadas, la limitación de permisos 
+        de usuario y el uso de herramientas de seguridad.
+    </p>
+</body>
+</html>

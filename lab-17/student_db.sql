@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS students;
+
+USE students;
+
+CREATE TABLE IF NOT EXISTS student_data (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255),
+  age INT,
+  major VARCHAR(255)
+);
