@@ -1,50 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Data</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="/dist/output.css">
+    <title>Home</title>
 </head>
-<body>
-    <h1>Student Data</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Age</th>
-          <th>Major</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% students.forEach((student) => { %>
-          <tr>
-            <td><%= student.id %></td>
-            <td><%= student.name %></td>
-            <td><%= student.age %></td>
-            <td><%= student.major %></td>
-          </tr>
-        <% }) %>
-      </tbody>
-    </table>
-    <h2>¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?</h2>
-    <p>Escribir el código SQL exclusivamente en la capa del modelo tiene varias ventajas, 
-        incluyendo la separación de responsabilidades, la reutilización de código, la
-        capacidad de adaptarse a cambios en la base de datos y la facilidad para realizar 
-        pruebas unitarias. Esto puede mejorar la calidad, eficiencia y mantenibilidad del 
-        código, así como permitir una mayor flexibilidad y reutilización.
-    </p>
-    <h2>¿Qué es SQL injection y cómo se puede prevenir?</h2>
-    <p>
-        SQL injection es una técnica de hacking en la que se inserta código malicioso en 
-        las consultas SQL de una aplicación web, con el objetivo de comprometer la seguridad
-        de la base de datos subyacente. La inyección SQL puede permitir a un atacante acceder, 
-        modificar o borrar datos de la base de datos, o incluso tomar el control del servidor 
-        web. <br>
-        Para prevenirla, se deben tomar medidas de seguridad adecuadas, como la validación y 
-        sanitización de entrada, el uso de consultas parametrizadas, la limitación de permisos 
-        de usuario y el uso de herramientas de seguridad.
-    </p>
+<%- include('partials/nav-bar.ejs') %>
+<body class="bg-slate-500">
+    <div class="w-full grid text-center">
+        <div class="grid-rows-2 justify-center py-7">
+            <div class="columns-1 text-lg py-5">
+                <div class="text-center text-xl">
+                    <h1 class="rounded-xl text-zinc-100 mx-auto w-1/6 text-xl hover:bg-gradient-to-r from-slate-700 to-gray-400">Hello!! We are the Marie Blue GroceryStore</h1>
+                </div>
+            </div>
+            <div class="columns-1 text-lg py-5">
+                <div class="text-center text-xl">
+                    <form action="/buy/comprar">
+                        <button type="submit"
+                            class="p-5 rounded-lg bg-slate-700 text-zinc-100 hover:bg-zinc-100 hover:text-slate-700">
+                            Comprar
+                        </button>
+                    </form>
+                    <br>
+                    <form action="/new/nuevo-producto">
+                        <button type="submit"
+                            class="p-5 rounded-lg bg-slate-700 text-zinc-100 hover:bg-zinc-100 hover:text-slate-700">
+                            Agrega un producto
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
