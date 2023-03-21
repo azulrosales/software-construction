@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/output.css">
+    <link rel="shortcut icon" href="#">
+    <title>ShoppingCart</title>
+</head>
+<%- include('partials/nav-bar.ejs') %>
+<body class="bg-slate-500">
+    <div class="grid w-full py-14">
+        <ul class="list-none text-center w-full">
+            <script> let total = 0;</script>
+                <% for (let product of products) { %>
+                    <% if (caca=="on" && product.handle == "@cacahuates"){ %>
+                        <li class="text-center text-zinc-50">
+                            <%= product.nombre %>:
+                            $<%= product.precio %>
+                            <script> total+= Number("<%= product.precio%>")</script>
+                        </li>
+                    <% } %>
+                    <% if (pf=="on" && product.handle == "@pollo"){ %>
+                        <li class="text-center text-zinc-50"> 
+                            <%= product.nombre %>:
+                            $<%= product.precio %>
+                            <script> total += Number("<%= product.precio%>")</script>
+                        </li>
+                    <% } %>
+                    <% if (flor=="on" && product.handle == "@flores"){ %>
+                        <li class="text-center text-zinc-50">
+                            <%= product.nombre %>:
+                            $<%= product.precio %>
+                            <script> total += Number("<%= product.precio%>")</script>
+                        </li>
+                    <% } %>
+                <%} %>
+        </ul>
+            <p class="text-zinc-100 py-5 text-center"> Tu total es de:
+                <script>document.write(total);</script>
+            </p>
+    </div>
+    <div class="grid justify-center text-center mx-auto w-2/6">
+        <h1 class="text-2xl text-zinc-100">Model View Controller (MVC)</h1>
+        <h2 class="text-zinc-100 py-7">Ventajas</h2>
+        <ul>
+            <li class="text-zinc-100">Crea independencia de funcionamiento.</li>
+            <li class="text-zinc-100">Facilita el mantenimiento en caso de errores.</li>
+            <li class="text-zinc-100">Permite escalar la aplicación si se requiere.</li>
+        </ul>
+        <h2 class="text-zinc-100 py-7">Desventajas</h2>
+        <ul>
+            <li class="text-zinc-100">La separación en capas agrega complejidad al sistema.</li>
+            <li class="text-zinc-100">Aumenta la cantidad de archivos a mantener.</li>
+            <li class="text-zinc-100">Medio revoltoso.</li>
+        </ul>
+    </div>
+</body>
+</html>
