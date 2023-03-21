@@ -3,9 +3,11 @@ const bodyParser = require('body-parser');
 const app = express();
 const path = require('path');
 const session = require('express-session');
+const isAuth = require('./util/is-auth');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 
 app.set('view engine', 'ejs');
 app.set('views', 'views/partials');
@@ -21,9 +23,9 @@ app.use(session({
 const homeModule = require("./routes/home.routes");
 app.use('/', homeModule);
 const buyModule = require("./routes/buy.routes");
-app.use('/buy', buyModule);
+app.use('/buy', isAuth, buyModule);
 const newModule = require("./routes/new.routes");
-app.use('/new', newModule);
+app.use('/new', isAuth, newModule);
 const userModule = require("./routes/user.routes");
 app.use('/user', userModule);
 

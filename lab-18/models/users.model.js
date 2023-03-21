@@ -1,4 +1,5 @@
 const db = require('../util/database');
+const bcrypt = require('bcryptjs');
 
 module.exports = class User {
 
@@ -11,8 +12,18 @@ module.exports = class User {
 
     //Este método servirá para guardar de manera persistente el nuevo objeto. 
     save() {
-        return db.execute(`INSERT INTO users (nombre, username, password) VALUES (?, ?, ?)`, 
-        [this.nombre, this.username, this.password]);
+        return bcrypt.hash(this.password, 12)
+            .then((password_cifrado) => {
+                return db.execute(`INSERT INTO users (nombre, username, password)
+                VALUES (?, ?, ?)`, [this.nombre, this.username, password_cifrado]);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
+    static fetch_one(username){
+        return db.execute(`SELECT * FROM users WHERE username = ?`, [username]);
     }
 
 }

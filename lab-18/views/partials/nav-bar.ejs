@@ -15,10 +15,16 @@
                 <a class="" method="GET" href="/buy/carrito">Ir al Carrito</a>
             </li>
         </div>
+        <% if(!isLoggedIn) { %> 
         <div class="text-center items-center px-10">
             <li class="rounded-xl mx-auto w-2/3 text-center text-zinc-100 list-none hover:bg-gradient-to-r from-slate-600 to-slate-800">
-                <a class="" method="GET" href="/user/signup">Sign In</a>
+                <a class="" method="GET" href="/user/signup">Sign Up</a>
             </li>
         </div>
+        <% } %>
+        <% if(isLoggedIn) { %> 
+        <span class="navbar-item">Hola <%= nombre %></span>
+        <a href="/user/logout" class="button is-danger">Log out</a>
+        <% } %>
     </div>
 </nav>

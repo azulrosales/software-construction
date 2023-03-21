@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/output.css">
+    <link rel="shortcut icon" href="#">
+    <title>Log in</title>
+</head>
+
+<%- include('partials/nav-bar.ejs') %>
+
+<h1 class="title">Entrar</h1>
+
+<% if(mensaje) { %>
+    <div class="notification is-link is-light">
+        <%= mensaje %>
+    </div>
+<% } %>
+
+<br><br>
+
+<form action="/user/login" method="POST">
+
+    <label for="username">Nombre de usuario:</label>
+    <input name="username" id="username" class="input is-rounded" type="text" placeholder="lalo">
+
+    <label for="password">Password:</label>
+    <input name="password" id="password" class="input is-rounded" type="password" >
+
+    <br><br>
+
+    <input class="p-5 rounded-lg bg-slate-700 text-zinc-100 hover:bg-zinc-100 hover:text-slate-700" 
+    type="submit" value="Entrar">
+
+</form>

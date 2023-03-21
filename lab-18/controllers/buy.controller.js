@@ -15,6 +15,9 @@ exports.get_comprar = (req, res) => {
             res.render(__dirname + '/../views/comprar', { 
                 products: rows,
                 latest_product: req.session.latest_product || '',
+                isLoggedIn: req.session.isLoggedIn || false,
+                nombre: req.session.nombre || '',
+                csrfToken: req.csrfToken(),
             });
         })
         .catch(error => {
